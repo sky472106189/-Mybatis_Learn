@@ -1,0 +1,81 @@
+1.什么是框架?
+    它是我们软件开发中的一套解决方案,不同的框架解决的是不同的问题.
+    使用框架的好处:
+            框架封装了很多细节,使开发者可以使用极简的方式实现功能,.大大提高开发效率.
+
+2.三层结构
+    表现层:
+            是用于展示数据的
+    业务层:
+            是处理业务需求的
+    持久层:
+            是和数据库交流的
+
+
+3.MyBatis概述
+    Mybatis是一个持久层框架,用java语言写的
+    它封装了JDBC操作的很多细节,使开发者只需要关注sql语句本身,而不需要关注注册驱动,创建连接等繁杂过程
+    它使用了ORM思想实现了结果集的封装
+
+    ORM:
+        Object Relational Mapping 对象关系映射
+        简单的说:
+                就是把数据库表和实体类及实体类的属性对应起来
+                让我们可以操作实体类就可以实现操作数据库表
+
+                user                            User
+                id                              userId
+                user_name                       userName
+
+        今天我们需要做到
+                实体类中的属性和数据库表的字段名称保持一致.
+                user                            user
+                id                              Id
+                user_name                       user_name
+
+4.Mybatis的入门
+        Mybatis的环境搭建
+                第一步:创建maven工程并导入坐标
+                第二步:创建实体类和dao的接口
+                第三步:创建Mybatis的主配置文件
+                                SqlMapConfig.xml
+                第四部:创建映射配置文件
+                                IUserDao.xml
+        环境搭建的注意事项:
+                第一个:创建IUserDao.xml 和 IUserDao.java时,名称是为了和我们之前的知识保持一致.
+                       在Mybatis中它把持久层的操作接口名和映射文件也叫做:Mapper
+                       所以:IUserDao和IUserMapper是一样的
+                第二个:在idea中创建目录的时候,它和包是不一样的
+                       包在创建时:com.mysql.Dao它是三级结构
+                       目录在创建时:com.mysql.Dao是一级目录
+                第三个:Mybatis的映射配置文件位置必须和dao接口的包结构相同
+                第四个:映射配置文件的mapper标签namespace属性的取值,必须是Dao接口的全限定类名
+                第五个:映射配置文件的操作配置(增删改查),id属性的取值,必须是Dao接口的方法名
+
+                当我们遵从了第三,四,五点之后,我们在开发中就无需再写dao的实现类.
+
+        Mybatis的入门案例
+                第一步:读取配置文件
+                第二步:读取SqlSessionFactory工厂
+                第三步:创建SqlSession
+                第四步:创建Dao接口的代理对象
+                第五步:执行Dao中的方法
+                第六步:释放资源
+
+                注意事项:
+                        不要忘记在映射配置中告知Mybatis要封装到哪个实体类中
+                        配置的方式:指定实体类的全限定名(IUserDao.xml文件中的resultType="...")
+
+                Mybatis基于注解的基础案例:
+                        把IUserDao.xml移除,在Dao接口的方法上使用@Select注解,并且使用指定SQL语句
+                        同时需要在SqlMapConfig.xml中的mapper配置时,使用class属性指定Dao接口的
+                        全限定类名.
+
+        明确:
+                我们在实际开发中,都是越简便越好,所以都是采用不写Dao实现类的方式.
+                不管是XML还是注解配置.
+                但是Mybatis是支持写Dao实现类的.
+
+
+
+

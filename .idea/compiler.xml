@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="Mybatis01" />
+        <module name="Mybatis02" />
+        <module name="Mybatis03" />
+        <module name="Mybatis03(Map)" />
+        <module name="Mybatis04" />
+        <module name="Mybatis05" />
+        <module name="Mybatis06lombok" />
+        <module name="Mybatis07" />
+        <module name="Mybatis08" />
+        <module name="Mybatis09" />
+        <module name="mybatis10" />
+        <module name="MybatisSpring11" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Mybatis" target="1.5" />
+      <module name="Mybatis01" target="1.5" />
+      <module name="Mybatis02" target="1.5" />
+      <module name="Mybatis03" target="1.5" />
+      <module name="Mybatis03(Map)" target="1.5" />
+      <module name="Mybatis04" target="1.5" />
+      <module name="Mybatis05" target="1.5" />
+      <module name="Mybatis06lombok" target="1.5" />
+      <module name="Mybatis07" target="1.5" />
+      <module name="Mybatis08" target="1.5" />
+      <module name="Mybatis09" target="1.5" />
+      <module name="mybatis10" target="1.5" />
+      <module name="MybatisSpring11" target="1.5" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

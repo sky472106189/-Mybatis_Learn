@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.myself.Dao.IUserDao">
+    <!--结果集映射(方法2)-->
+    <resultMap id="UserMap" type="com.myself.domain.User">
+        <!--column:数据库中的字段名,property:实体类中的属性名-->
+        <result column="id" property="id"/>
+        <result column="username" property="username"/>
+        <result column="birthday" property="brd"/> <!--这行是关键,修改了错误,使数据不再为null-->
+        <!--<result column="sex" property="sex"/>            其实如果字段名和实体类属性名一致,是可以不用拎出来改的,所以注销也行-->
+        <!--<result column="address" property="address"/>-->
+    </resultMap>
+    
+    <select id="findUserById"  parameterType="int" resultMap="UserMap">  <!--方法2就要去掉resultType,用resultMap代替-->
+        select * from USER WHERE id = #{ID}
+        <!--方法1:select id,username,birthday,sex,address from USER WHERE id = #{ID}-->
+    </select>
+</mapper>

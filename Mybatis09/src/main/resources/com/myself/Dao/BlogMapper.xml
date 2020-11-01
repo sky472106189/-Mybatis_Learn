@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.myself.Dao.BlogMapper">
+    <select id="findALL" resultType="Blog">
+        select * from blog;
+    </select>
+
+    <insert id="insertBlog" parameterType="Blog">
+        INSERT INTO blog(id, title, author, creat_time, views)
+        VALUES (#{id},#{title},#{author},#{creatTime},#{views})
+    </insert>
+
+
+    <sql id="if_title_author">
+        <if test="title!=null" >
+           title = #{title}
+        </if>
+        <if test="author!=null">
+            and author =#{author}
+        </if>
+    </sql>
+
+    <select id="findBlogIF" resultType="Blog" parameterType="map">
+        select * from blog
+        <where>
+          <include refid="if_title_author"></include>
+        </where>
+    </select>
+
+    <select id="findBlogChoose" resultType="Blog" parameterType="map">
+        select * from blog
+        <where>
+        <choose>
+            <when test="title != null">
+                title = #{title}
+            </when>
+            <when test="author != null">
+                and author = #{author}
+            </when>
+            <otherwise>
+                and views =#{views}
+            </otherwise>
+        </choose>
+        </where>
+    </select>
+    
+    <update id="updateBlog" parameterType="map">
+      update blog
+      <set>
+          <include refid="if_title_author"></include>
+      </set>
+      where id=#{id}
+    </update>
+
+</mapper>

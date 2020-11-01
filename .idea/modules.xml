@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Mybatis.iml" filepath="$PROJECT_DIR$/Mybatis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Mybatis01/Mybatis01.iml" filepath="$PROJECT_DIR$/Mybatis01/Mybatis01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Mybatis02/Mybatis02.iml" filepath="$PROJECT_DIR$/Mybatis02/Mybatis02.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Mybatis03/Mybatis03(Map).iml" filepath="$PROJECT_DIR$/Mybatis03/Mybatis03(Map).iml" />
+      <module fileurl="file://$PROJECT_DIR$/Mybatis04/Mybatis04.iml" filepath="$PROJECT_DIR$/Mybatis04/Mybatis04.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Mybatis05/Mybatis05.iml" filepath="$PROJECT_DIR$/Mybatis05/Mybatis05.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Mybatis06lombok/Mybatis06lombok.iml" filepath="$PROJECT_DIR$/Mybatis06lombok/Mybatis06lombok.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Mybatis07/Mybatis07.iml" filepath="$PROJECT_DIR$/Mybatis07/Mybatis07.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Mybatis08/Mybatis08.iml" filepath="$PROJECT_DIR$/Mybatis08/Mybatis08.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Mybatis09/Mybatis09.iml" filepath="$PROJECT_DIR$/Mybatis09/Mybatis09.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MybatisSpring11/MybatisSpring11.iml" filepath="$PROJECT_DIR$/MybatisSpring11/MybatisSpring11.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mybatis10/mybatis10.iml" filepath="$PROJECT_DIR$/mybatis10/mybatis10.iml" />
+    </modules>
+  </component>
+</project>

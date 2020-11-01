@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--映射配置文件-->
+<!--若使用注解方式,此xml文件可以删掉-->
+<mapper namespace="com.myself.Dao.IUserDao"><!--名字必须是Dao接口的全限定类名-->
+    <!--配置查询所有-->
+    <select id="findAll" resultType="com.myself.domain.User"><!--id不能随便写,里面是对应的方法名-->
+          select * from user
+    </select>
+
+    <select id="findUserById"  parameterType="int" resultType="com.myself.domain.User">
+        select * from USER WHERE id = #{ID}
+    </select>
+
+    <select id="findUserLike" resultType="com.myself.domain.User">
+        select * from user where username like #{value}
+    </select>
+
+    <insert id="addUser" parameterType="com.myself.domain.User">
+        INSERT into eesy_mybatis.user(id,username,birthday,sex,address) VALUES (#{id},#{username},#{birthday},#{sex},#{address});
+    </insert>
+
+    <insert id="addUser2" parameterType="map">
+        INSERT into eesy_mybatis.user(id,username,birthday,sex,address) VALUES (#{unknowId},#{unknowUsername},#{unknowBirthday},#{unknowsex},#{unknowAddress});
+    </insert>
+
+    <update id="updateUser" parameterType="com.myself.domain.User">
+        update eesy_mybatis.user set username=#{username},birthday=#{birthday},sex=#{sex},address=#{address}  where id = #{id};
+    </update>
+
+    <delete id="deleteUser" parameterType="int">
+        DELETE from eesy_mybatis.user where id = #{Id};
+    </delete>
+</mapper>
+<!--分析:用此xml来指定接口的指定方法,这里的namespace指向接口
+         select id指向接口中的"查"方法名.同时用resultType来告知封装到哪个实体
+         语句就是你想用的具体方法(增删改查)-->
